@@ -1,68 +1,12 @@
 baseURL = "https://blog.jerryiscat.one/"
 languageCode = "zh-CN"
 title = "Jerry's Blog"
-theme = "PaperMod"
+theme = "ananke"
 defaultContentLanguage = "zh"
 hasCJKLanguage = true
 enableRobotsTXT = true
-buildDrafts = false
-buildFuture = false
-
-[pagination]
-  pagerSize = 10
 
 [params]
   author = "Jerry"
-  mainSections = ["posts"]
   description = "Jerry 和大橘老师的共创空间"
-  defaultTheme = "auto"
-  disableThemeToggle = false
-  ShowReadingTime = true
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowWordCount = false
-  ShowRssButtonInSectionTermList = true
-  UseHugoToc = true
-  disableSpecial1stPost = true
-  showAllPagesInHomeList = true
-  disableScrollToTop = false
-  comments = false
-  hidemeta = false
-  hideSummary = false
-  showtoc = false
-  tocopen = false
-
-  [params.homeInfoParams]
-    Title = "Hi there 👋"
-    Content = "欢迎来到 Jerry 的小角落，这里有一些随笔和思考。"
-
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/jerryisacat"
-
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "文章"
-    url = "/posts/"
-    weight = 10
-  [[menu.main]]
-    identifier = "tags"
-    name = "标签"
-    url = "/tags/"
-    weight = 20
-  [[menu.main]]
-    identifier = "archives"
-    name = "归档"
-    url = "/archives/"
-    weight = 30
-  [[menu.main]]
-    identifier = "search"
-    name = "搜索"
-    url = "/search/"
-    weight = 40
-
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
+  recent_posts_number = 10
