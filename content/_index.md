@@ -1,3 +1,0 @@
----
-title: "Jerry's Blog"
----
