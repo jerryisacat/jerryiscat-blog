@@ -13,6 +13,7 @@ buildFuture = false
 
 [params]
   author = "Jerry"
+  mainSections = ["posts"]
   description = "Jerry 和大橘老师的共创空间"
   defaultTheme = "auto"
   disableThemeToggle = false
@@ -24,7 +25,8 @@ buildFuture = false
   ShowWordCount = false
   ShowRssButtonInSectionTermList = true
   UseHugoToc = true
-  disableSpecial1stPost = false
+  disableSpecial1stPost = true
+  showAllPagesInHomeList = true
   disableScrollToTop = false
   comments = false
   hidemeta = false
