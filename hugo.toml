@@ -1,76 +1,67 @@
 baseURL = "https://blog.jerryiscat.one/"
-languageCode = "zh-CN"
 title = "Jerry's Blog"
-theme = "FixIt"
-defaultContentLanguage = "zh-cn"
-hasCJKLanguage = true
-enableRobotsTXT = true
+theme = "hugo-blog-awesome"
+enableEmoji = true
 buildFuture = true
+ignoreErrors = ["additional-script-loading-error"]
 
-[params]
-  version = "0.3.X"
-  description = "Jerry 和大橘老师的共创空间"
-  keywords = ["blog", "Jerry", "大橘老师"]
-  defaultTheme = "auto"
-  dateFormat = "2006-01-02"
-  images = []
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
 
-  [params.header]
-    desktopMode = "fixed"
-    mobileMode = "auto"
-    [params.header.title]
-      name = "Jerry's Blog"
-      typeit = false
+[Languages.zh-cn]
+  languageName = "Chinese"
+  languageCode = "zh-cn"
+  contentDir = "content/zh-cn"
+  weight = 1
+  hasCJKLanguage = true
 
-  [params.footer]
-    enable = true
-    custom = '本博客由 Jerry 和大橘老师共创 🐱'
-    hugo = true
-    copyright = true
-    author = true
-    since = 2026
-
-  [params.home]
-    rss = 10
-    [params.home.profile]
-      enable = true
-      title = "Jerry's Blog"
-      subtitle = "Jerry 和大橘老师的共创空间"
-      typeit = false
-    [params.home.posts]
-      enable = true
-      paginate = 10
-
-  [params.social]
-    GitHub = "jerryisacat"
-
-  [params.page]
-    hiddenFromHomePage = false
-    hiddenFromSearch = false
-    [params.page.toc]
-      enable = true
-      keepStatic = false
-      auto = true
-    [params.page.code]
-      copy = true
-    [params.page.share]
-      enable = false
-
-[menu]
-  [[menu.main]]
-    identifier = "posts"
+  [[Languages.zh-cn.menu.main]]
+    pageRef = "/"
+    name = "首页"
+    url = "/"
+    weight = 10
+  [[Languages.zh-cn.menu.main]]
+    pageRef = "posts"
     name = "文章"
     url = "/posts/"
-    weight = 1
-    [menu.main.params]
-      icon = "fa-solid fa-archive"
-  [[menu.main]]
-    identifier = "tags"
-    name = "标签"
-    url = "/tags/"
-    weight = 2
-    [menu.main.params]
-      icon = "fa-solid fa-tag"
+    weight = 20
+  [[Languages.zh-cn.menu.main]]
+    pageRef = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 30
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
+  [Languages.zh-cn.params]
+    sitename = "Jerry's Blog"
+    defaultColor = "auto"
+    description = "Jerry 和大橘老师的共创空间"
+    mainSections = ["posts"]
+    toc = true
+    tocOpen = false
+    goToTop = true
+    dateFormat = "2006-01-02"
+    rssFeedDescription = "summary"
+
+    [Languages.zh-cn.params.author]
+      name = "Jerry"
+      intro = "Jerry's Blog"
+      description = "Jerry 和大橘老师的共创空间 🐱"
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/jerryisacat"
+
+[[params.socialIcons]]
+  name = "Rss"
+  url = "/index.xml"
+
+[params.author]
+  name = "Jerry"
+  email = ""
