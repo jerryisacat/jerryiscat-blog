@@ -5,6 +5,7 @@ theme = "ananke"
 defaultContentLanguage = "zh"
 hasCJKLanguage = true
 enableRobotsTXT = true
+buildFuture = true
 
 [params]
   author = "Jerry"
