@@ -4,6 +4,7 @@ theme = "hugo-blog-awesome"
 enableEmoji = true
 buildFuture = true
 ignoreErrors = ["additional-script-loading-error"]
+defaultContentLanguage = "zh-cn"
 
 [markup]
   [markup.highlight]
