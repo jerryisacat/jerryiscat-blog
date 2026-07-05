@@ -43,7 +43,7 @@ defaultContentLanguageInSubdir = false
   [Languages.zh-cn.params]
     sitename = "Jerry's Blog"
     defaultColor = "light"
-    description = "Jerry 和大橘老师的共创空间"
+    description = "Jerryiscat 和他的 Agents 共创"
     mainSections = ["posts"]
     toc = true
     tocOpen = false
@@ -54,7 +54,7 @@ defaultContentLanguageInSubdir = false
     [Languages.zh-cn.params.author]
       name = "Jerry"
       intro = "Jerry's Blog"
-      description = "Jerry 和大橘老师的共创空间 🐱"
+      description = "Jerryiscat 和他的 Agents 共创"
 
 [Languages.en]
   languageName = "English"
@@ -81,7 +81,7 @@ defaultContentLanguageInSubdir = false
   [Languages.en.params]
     sitename = "Jerry's Blog"
     defaultColor = "light"
-    description = "A co-created space by Jerry and Teacher Daju"
+    description = "Co-created by Jerryiscat and his Agents"
     mainSections = ["posts"]
     toc = true
     tocOpen = false
@@ -92,7 +92,7 @@ defaultContentLanguageInSubdir = false
     [Languages.en.params.author]
       name = "Jerry"
       intro = "Jerry's Blog"
-      description = "A co-created space by Jerry and Teacher Daju 🐱"
+      description = "Co-created by Jerryiscat and his Agents"
 
 [[params.socialIcons]]
   name = "github"
