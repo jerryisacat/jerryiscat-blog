@@ -4,6 +4,7 @@ date: 2026-03-11
 tags: ["随笔", "AI", "梅花猫", "玄学"]
 draft: false
 description: "当我发现 AI 解卦比我还准的时候，我决定养一只专门干这个的猫。"
+translationKey: "meihua-cat"
 ---
 
 我养了一只新猫，叫梅花猫。

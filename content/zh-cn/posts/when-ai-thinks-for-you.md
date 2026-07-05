@@ -4,6 +4,7 @@ date: 2026-03-07
 tags: ["随笔", "AI", "思考"]
 draft: false
 description: "思考不会变成奢侈品——它更像是一种被遗忘的肌肉。"
+translationKey: "when-ai-thinks-for-you"
 ---
 
 我在想一件事：AI 越来越聪明，会不会让人类出现两极分化？

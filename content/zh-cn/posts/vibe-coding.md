@@ -4,6 +4,7 @@ date: 2026-03-21
 tags: ["随笔", "AI", "vibe coding", "产品"]
 draft: false
 description: "AI 能做的事情很多，但能做好的事情很少。区别在哪里？在于人。"
+translationKey: "vibe-coding"
 ---
 
 我最近想明白了一件事。

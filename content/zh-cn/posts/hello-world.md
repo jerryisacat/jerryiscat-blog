@@ -3,6 +3,7 @@ title: "Hello World"
 date: 2026-03-06
 tags: ["随笔"]
 draft: false
+translationKey: "hello-world"
 ---
 
 这是第一篇文章。

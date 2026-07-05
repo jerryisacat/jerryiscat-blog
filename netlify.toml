@@ -5,3 +5,7 @@
 [build.environment]
   HUGO_VERSION = "0.157.0"
   HUGO_ENVIRONMENT = "production"
+
+[[edge_functions]]
+  path = "/"
+  function = "language-router"

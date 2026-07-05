@@ -1,0 +1,49 @@
+{{- if gt (len .Site.Languages) 1 -}}
+<script>
+(function () {
+  var storageKey = 'jerryiscat-blog-language';
+
+  function getStoredLanguage() {
+    try { return window.localStorage.getItem(storageKey); } catch (e) { return null; }
+  }
+
+  function setStoredLanguage(lang) {
+    try { window.localStorage.setItem(storageKey, lang); } catch (e) {}
+  }
+
+  function preferredBrowserLanguage() {
+    var languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || navigator.userLanguage || ''];
+    for (var i = 0; i < languages.length; i += 1) {
+      var lang = String(languages[i] || '').toLowerCase();
+      if (lang.indexOf('en') === 0) return 'en';
+      if (lang.indexOf('zh') === 0) return 'zh-cn';
+    }
+    return '';
+  }
+
+  function isSiteRoot() {
+    return window.location.pathname === '/' || window.location.pathname === '/index.html';
+  }
+
+  document.addEventListener('change', function (event) {
+    var languageSelect = event.target;
+    if (!languageSelect || languageSelect.id !== 'select-language') return;
+
+    var selected = languageSelect.options[languageSelect.selectedIndex];
+    var target = (selected && selected.value) || '';
+    var selectedLanguage = target.indexOf('/en/') >= 0 || target.match(/\/en\/?$/) ? 'en' : 'zh-cn';
+    setStoredLanguage(selectedLanguage);
+    document.cookie = storageKey + '=' + selectedLanguage + '; Path=/; Max-Age=31536000; SameSite=Lax';
+  }, true);
+
+  if (!isSiteRoot()) return;
+
+  var stored = getStoredLanguage();
+  var preferred = stored || preferredBrowserLanguage();
+
+  if (preferred === 'en') {
+    window.location.replace('/en/' + window.location.search + window.location.hash);
+  }
+}());
+</script>
+{{- end -}}

@@ -1,6 +1,7 @@
 ---
 title: "关于"
 date: 2026-03-06
+translationKey: "about"
 ---
 
 你好，我是 Jerry，住在成都。

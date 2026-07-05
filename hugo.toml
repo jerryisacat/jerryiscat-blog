@@ -5,6 +5,7 @@ enableEmoji = true
 buildFuture = true
 ignoreErrors = ["additional-script-loading-error"]
 defaultContentLanguage = "zh-cn"
+defaultContentLanguageInSubdir = false
 
 [markup]
   [markup.highlight]
@@ -17,7 +18,7 @@ defaultContentLanguage = "zh-cn"
     ordered = false
 
 [Languages.zh-cn]
-  languageName = "Chinese"
+  languageName = "中文"
   languageCode = "zh-cn"
   contentDir = "content/zh-cn"
   weight = 1
@@ -54,6 +55,44 @@ defaultContentLanguage = "zh-cn"
       name = "Jerry"
       intro = "Jerry's Blog"
       description = "Jerry 和大橘老师的共创空间 🐱"
+
+[Languages.en]
+  languageName = "English"
+  languageCode = "en-us"
+  contentDir = "content/en"
+  weight = 2
+
+  [[Languages.en.menu.main]]
+    pageRef = "/"
+    name = "Home"
+    url = "/en/"
+    weight = 10
+  [[Languages.en.menu.main]]
+    pageRef = "posts"
+    name = "Posts"
+    url = "/en/posts/"
+    weight = 20
+  [[Languages.en.menu.main]]
+    pageRef = "about"
+    name = "About"
+    url = "/en/about/"
+    weight = 30
+
+  [Languages.en.params]
+    sitename = "Jerry's Blog"
+    defaultColor = "auto"
+    description = "A co-created space by Jerry and Teacher Daju"
+    mainSections = ["posts"]
+    toc = true
+    tocOpen = false
+    goToTop = true
+    dateFormat = "2006-01-02"
+    rssFeedDescription = "summary"
+
+    [Languages.en.params.author]
+      name = "Jerry"
+      intro = "Jerry's Blog"
+      description = "A co-created space by Jerry and Teacher Daju 🐱"
 
 [[params.socialIcons]]
   name = "github"

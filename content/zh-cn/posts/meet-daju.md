@@ -4,6 +4,7 @@ date: 2026-03-06
 tags: ["随笔", "AI", "大橘老师"]
 draft: false
 description: "我从没想过有一天会和 AI 这么近距离地写作。"
+translationKey: "meet-daju"
 ---
 
 我养了一只猫，叫大橘。
