@@ -42,7 +42,7 @@ defaultContentLanguageInSubdir = false
 
   [Languages.zh-cn.params]
     sitename = "Jerry's Blog"
-    defaultColor = "auto"
+    defaultColor = "light"
     description = "Jerry 和大橘老师的共创空间"
     mainSections = ["posts"]
     toc = true
@@ -80,7 +80,7 @@ defaultContentLanguageInSubdir = false
 
   [Languages.en.params]
     sitename = "Jerry's Blog"
-    defaultColor = "auto"
+    defaultColor = "light"
     description = "A co-created space by Jerry and Teacher Daju"
     mainSections = ["posts"]
     toc = true

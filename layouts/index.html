@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{{- $defaultColor := "light" -}}
+<html lang="{{ .Site.LanguageCode }}" class="light">
+{{- partial "head.html" . -}}
+<body data-theme="light" class="notransition">
+    {{- partial "scriptsBodyStart.html" . -}}
+    {{- partial "header.html" . -}}
+    {{- $isEN := eq .Site.Language.Lang "en" -}}
+    <div class="wrapper retro-home">
+        <section class="author retro-window" aria-labelledby="site-title">
+            <div class="retro-titlebar">
+                <span>{{ if $isEN }}PERSONAL HOMEPAGE.EXE{{ else }}个人主页.EXE{{ end }}</span>
+                <span class="retro-titlebar-buttons" aria-hidden="true"><i></i><i></i><i></i></span>
+            </div>
+            <div class="retro-window-body retro-panel-yellow">
+                <h1 id="site-title" class="author-name retro-hero-title retro-rainbow">{{ .Site.Params.author.intro }}</h1>
+                <p class="author-bio retro-hero-subtitle">{{ .Site.Params.author.description }}</p>
+                <hr class="retro-hr" aria-hidden="true">
+                <div class="retro-color-squares" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <span class="retro-label">{{ if $isEN }} BEST VIEWED IN 800×600 · SINCE 2026{{ else }} 推荐 800×600 浏览 · SINCE 2026{{ end }}</span>
+            </div>
+        </section>
+
+        <div class="retro-marquee retro-inset" aria-label="{{ if $isEN }}Site announcement{{ else }}网站公告{{ end }}">
+            <div class="retro-marquee-track">
+                ★ {{ if $isEN }}WELCOME TO JERRY'S BLOG — co-created with Teacher Daju — bilingual now online — mind the cats!{{ else }}欢迎来到 Jerry's Blog —— 与大橘老师共创 —— 中英双语已上线 —— 小心猫猫出没！{{ end }} ★
+            </div>
+        </div>
+
+        <main aria-label="Content">
+            <section class="retro-window" aria-labelledby="recent-posts-title">
+                <div class="retro-titlebar">
+                    <span id="recent-posts-title">{{ if $isEN }}RECENT_POSTS.DAT{{ else }}最新文章.DAT{{ end }}</span>
+                    <span class="retro-titlebar-buttons" aria-hidden="true"><i></i><i></i><i></i></span>
+                </div>
+                <div class="retro-window-body">
+                    <div class="retro-post-grid">
+                        {{ $pagesToShow := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
+                        {{ $posts := $pagesToShow.ByDate.Reverse }}
+                        {{ range $index, $post := first 5 $posts }}
+                        <article class="retro-post-row">
+                            <div class="retro-post-cell">
+                                <h2 class="retro-post-title">
+                                    {{ if eq $index 0 }}<span class="retro-new">NEW!</span>{{ end }}
+                                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                </h2>
+                            </div>
+                            <time class="retro-post-cell retro-post-date" datetime="{{ dateFormat "2006-01-02T15:04:05Z0700" .Date }}">{{ time.Format (.Site.Params.dateFormat | default "2006-01-02") .Date }}</time>
+                        </article>
+                        {{ end }}
+                    </div>
+                    {{ if gt (len $posts) 5 }}
+                    <p>
+                        {{ range $firstSection := (where .Site.Sections "Section" "in" (first 1 (.Site.Params.mainSections))) }}
+                        <a class="retro-button" href="{{ $firstSection.Permalink }}">{{ T "home.see_all_posts" }}</a>
+                        {{ end }}
+                    </p>
+                    {{ end }}
+                    <div class="retro-counter" aria-label="{{ if $isEN }}Visitor counter{{ else }}访客计数器{{ end }}">
+                        {{ if $isEN }}VISITORS: 0002026 | STATUS: ONLINE | LANGUAGE: EN-US{{ else }}访客: 0002026 | 状态: ONLINE | 语言: ZH-CN{{ end }}
+                    </div>
+                </div>
+            </section>
+
+            <section class="retro-window" aria-labelledby="about-station-title">
+                <div class="retro-titlebar">
+                    <span id="about-station-title">{{ if $isEN }}ABOUT_THIS_STATION.TXT{{ else }}关于本站.TXT{{ end }}</span>
+                    <span class="retro-titlebar-buttons" aria-hidden="true"><i></i><i></i><i></i></span>
+                </div>
+                <div class="retro-window-body retro-panel-yellow">
+                    <p>{{ if $isEN }}A tiny corner of the web for essays, thoughts, AI experiments, and cats with opinions.{{ else }}一个记录随笔、思考、AI 实验，以及有自己想法的猫猫的小角落。{{ end }}</p>
+                </div>
+                <div class="retro-construction" aria-hidden="true"><span>{{ if $isEN }}UNDER CONSTRUCTION FOREVER{{ else }}永远施工中{{ end }}</span></div>
+            </section>
+        </main>
+    </div>
+    {{- partial "footer.html" . -}}
+    {{- partial "scriptsBodyEnd.html" . -}}
+</body>
+</html>

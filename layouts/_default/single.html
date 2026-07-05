@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{- $isEN := eq .Site.Language.Lang "en" -}}
+<div class="wrapper post retro-article-window">
+    <main class="page-content" aria-label="Content">
+        <article class="retro-window">
+            <header class="header retro-titlebar">
+                <h1 class="header-title">{{ .Title }}</h1>
+                <span class="retro-titlebar-buttons" aria-hidden="true"><i></i><i></i><i></i></span>
+            </header>
+            {{ $configDateFormat := .Site.Params.dateFormat | default ":date_medium" }}
+            {{ with .Date }}
+            {{ $ISO_time := dateFormat "2006-01-02T15:04:05-07:00" . }}
+            <div class="post-meta retro-counter">
+                {{ if $isEN }}POSTED:{{ else }}发布时间:{{ end }} <time datetime="{{ $ISO_time }}" itemprop="datePublished">{{ . | time.Format $configDateFormat }}</time>
+            </div>
+            {{ end }}
+            {{ partial "toc.html" .}}
+            <div class="page-content retro-article-body">
+                {{ .Content }}
+            </div>
+            <div class="retro-construction" aria-hidden="true"><span>{{ if $isEN }}END OF FILE · THANKS FOR READING{{ else }}文件结束 · 感谢阅读{{ end }}</span></div>
+        </article>
+        {{- partial "comments.html" . -}}
+    </main>
+</div>
+{{ end }}
