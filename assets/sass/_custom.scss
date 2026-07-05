@@ -308,7 +308,8 @@ blockquote {
   animation: retro-blink 1s step-end infinite;
 }
 
-.retro-post-grid {
+.retro-post-grid,
+.retro-product-grid {
   display: grid;
   border: 2px solid #808080;
   background: #808080;
@@ -325,12 +326,24 @@ blockquote {
   background: #808080;
 }
 
-.retro-post-cell {
+.retro-product-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) 1fr 96px;
+  gap: 2px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: #808080;
+}
+
+.retro-post-cell,
+.retro-product-cell {
   padding: 9px 10px;
   background: #fff;
 }
 
-.retro-post-row:nth-child(even) .retro-post-cell {
+.retro-post-row:nth-child(even) .retro-post-cell,
+.retro-product-row:nth-child(even) .retro-product-cell {
   background: #e8e8e8;
 }
 
@@ -488,11 +501,13 @@ pre code {
     border-bottom: 2px solid #808080 !important;
   }
 
-  .retro-post-row {
+  .retro-post-row,
+  .retro-product-row {
     grid-template-columns: 1fr;
   }
 
-  .retro-post-date {
+  .retro-post-date,
+  .retro-product-action {
     text-align: left;
   }
 

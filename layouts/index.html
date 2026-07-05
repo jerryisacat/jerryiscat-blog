@@ -62,6 +62,32 @@
                 </div>
             </section>
 
+            {{ with site.Data.products.products }}
+            <section class="retro-window" aria-labelledby="products-title">
+                <div class="retro-titlebar">
+                    <span id="products-title">{{ if $isEN }}MY_PRODUCTS.EXE{{ else }}我的产品.EXE{{ end }}</span>
+                    <span class="retro-titlebar-buttons" aria-hidden="true"><i></i><i></i><i></i></span>
+                </div>
+                <div class="retro-window-body">
+                    <div class="retro-product-grid">
+                        {{ range . }}
+                        {{ $copy := cond $isEN .en .zh }}
+                        <article class="retro-product-row">
+                            <div class="retro-product-cell retro-product-name">
+                                {{ with .badge }}<span class="retro-hot">{{ . }}</span>{{ end }}
+                                <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ $copy.name }}</a>
+                            </div>
+                            <div class="retro-product-cell retro-product-description">{{ $copy.description }}</div>
+                            <div class="retro-product-cell retro-product-action">
+                                <a class="retro-button" href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ $copy.action }}</a>
+                            </div>
+                        </article>
+                        {{ end }}
+                    </div>
+                </div>
+            </section>
+            {{ end }}
+
             <section class="retro-window" aria-labelledby="about-station-title">
                 <div class="retro-titlebar">
                     <span id="about-station-title">{{ if $isEN }}ABOUT_THIS_STATION.TXT{{ else }}关于本站.TXT{{ end }}</span>

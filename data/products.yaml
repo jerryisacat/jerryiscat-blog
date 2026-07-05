@@ -1,0 +1,12 @@
+products:
+  - id: hermes-tools
+    url: "https://github.com/jerryisacat/jumao-hermes-tools"
+    badge: "OPEN SOURCE"
+    zh:
+      name: "Hermes Tools"
+      description: "小咕和橘猫老师共同维护的 Hermes 实用工具与流程沉淀仓库。"
+      action: "访问"
+    en:
+      name: "Hermes Tools"
+      description: "An open-source toolbox of Hermes Agent utilities and workflow notes."
+      action: "OPEN"
