@@ -9,3 +9,7 @@
 [[edge_functions]]
   path = "/"
   function = "language-router"
+
+[[edge_functions]]
+  path = "/index.html"
+  function = "language-router"
